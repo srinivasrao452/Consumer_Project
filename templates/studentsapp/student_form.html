@@ -1,0 +1,18 @@
+
+{% extends 'studentsapp/base.html' %}
+
+{% block title %} Create Student {% endblock %}
+
+{% block body %}
+    {% if form %}
+       <form method="POST">
+          {% csrf_token %}
+          <table>
+              {{ form }}
+          </table>
+          <input type="submit" value="Create" style="margin-left: 100px;">
+       </form>
+    {% else %}
+       <h2>{{ error }}</h2>
+    {% endif %}
+{% endblock %}
